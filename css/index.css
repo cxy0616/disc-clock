@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body{
+    /* background: #282828; */
+    overflow: hidden;
+}
+.clock{
+    position: relative;
+    width: 378px;
+    height: 378px;
+    margin: 100px  auto;
+    background: url(../images/clockFace.png) no-repeat;
+}
+.clock li{
+    position: absolute;
+
+}
+
+
+
+/*
+首先考虑 时钟指针 和 分针  秒针 ，匹配：
+7day *24 * 60 * 60 
+秒针：604800*6 = 3628800deg
+分针： （604800/60 ）*6 = 60480deg
+时针：1个小时 =  30deg   7*24*30 = 5040deg
+
+
+*/
+.clock.init li.hours img{
+    transform: rotate(5040deg);
+   
+}
+.clock.init li.minute img{
+    transform: rotate(60480deg);
+}
+
+.clock.init li.second img{
+    transform: rotate(3628800deg);
+}
+
+
+.clock li.hours img{
+    
+    transition: transform 604800s linear;
+}
+.clock li.minute img{
+    transition: transform 604800s linear;
+}
+
+.clock li.second img{
+    transition: transform 604800s linear;
+}
+
+
+
